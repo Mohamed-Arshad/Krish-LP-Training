@@ -65,10 +65,9 @@ const findMissingNumber = (arr) => {
 
 //Q4) find whether 2 words are anagram?
 const isAnagram=(str1,str2)=>{
-    if(str1.split("").sort().join("").toLowerCase()==str2.split("").sort().join("").toLowerCase()){
-        return true;              //true: if str1 & str2 are angram 
-    }
-    return false;                 //false: if both are ot anagram
+    return str1.split("").sort().join("").toLowerCase()==str2.split("").sort().join("").toLowerCase();
+    //return true: if str1 & str2 are angram
+    //returnfalse: if both are ot anagram
 }
 // console.log(isAnagram("listen","silent"));
 // console.log(isAnagram("Hi","bye"));
