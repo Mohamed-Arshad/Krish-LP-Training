@@ -66,5 +66,5 @@ const searchForSameNumber=(numbers, name_aray)=>{
 }
 module.exports={name_sort};
 
-let arr=['aac','aab','caa','ya','z','nab'];
-console.log(name_sort(arr));
+//let arr=['aac','aab','caa','ya','z','nab'];
+//console.log(name_sort(arr));
