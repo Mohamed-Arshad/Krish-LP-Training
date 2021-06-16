@@ -17,7 +17,7 @@ public class StudentServiceImpl implements StudentService{
 	public Student save(Student student) {
 		return studentrepository.save(student);
 	}
-	
+	@Override
 	public Student fetchStudentbyId(int id) {
 		Optional<Student> student=studentrepository.findById(id);
 		if(student.isPresent()) {
