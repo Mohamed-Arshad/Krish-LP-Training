@@ -1,8 +1,7 @@
 package com.arshad.rentacar.demoapplication.repository;
 import com.arshad.rentacar.demoapplication.model.Student;
 
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentRepository extends Repository<Student,Integer>{
-	Student save(Student student);
+public interface StudentRepository extends JpaRepository<Student,Integer>{
 }
