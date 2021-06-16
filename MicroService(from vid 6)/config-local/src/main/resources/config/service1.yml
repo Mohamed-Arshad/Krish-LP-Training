@@ -1,0 +1,4 @@
+service:
+  message: Hello!!!, Now you are on service 1
+  serviceName: Service1
+  serverId: 100
