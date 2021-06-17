@@ -6,9 +6,10 @@ spring:
       server:
         git:
           uri: https://github.com/Mohamed-Arshad/Spring-Cloud-Config-Store
-          default-label: main #your repo branch
+          default-label: cloudConfig #your repo branch
           search-paths:
-           - '*service'
+           - 'service-config/*service'
           #if you are using private repopository you should pass username and password
           #username: root
           #passphrase: 12345
+          #for config consumer we shoud change the defaul-lable to main
