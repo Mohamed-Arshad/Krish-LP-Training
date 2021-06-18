@@ -17,21 +17,43 @@ public class ProfileController {
     @Autowired
     CustomerService customerService;
 
-    @RequestMapping(value = "/profile", method = RequestMethod.POST)
+//    @RequestMapping(value = "/profile", method = RequestMethod.POST)
+//    @PreAuthorize("hasAuthority('create_profile')")
+//    public Customer save(@RequestBody Customer customer) {
+//        return customerService.save(customer);
+//    }
+//
+//    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+//    @PreAuthorize("hasAuthority('read_profile')")
+//    public Customer fetch(@RequestParam int profileId) {
+//        return customerService.fetchById(profileId);
+//    }
+//
+//    @RequestMapping(value = "/profiles", method = RequestMethod.GET)
+//    @PreAuthorize("hasRole('ROLE_operator')")
+//    public List<Customer> fetch() {
+//        return customerService.fetchAllProfiles();
+//    }
+    
+    
+//below are industry best practice    
+    @RequestMapping(value = "/customers", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('create_profile')")
     public Customer save(@RequestBody Customer customer) {
         return customerService.save(customer);
     }
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @RequestMapping(value = "/customers/{id}", method = RequestMethod.GET)
     @PreAuthorize("hasAuthority('read_profile')")
-    public Customer fetch(@RequestParam int profileId) {
-        return customerService.fetchById(profileId);
+    public Customer fetch(@PathVariable(value="id") int customerid) {
+        return customerService.fetchById(customerid);
     }
 
-    @RequestMapping(value = "/profiles", method = RequestMethod.GET)
-    @PreAuthorize("hasRole('ROLE_operator')")
+    @RequestMapping(value = "/customers", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_admin')")    //role changed (previouse role is operator)
     public List<Customer> fetch() {
         return customerService.fetchAllProfiles();
     }
+    
+    
 }
