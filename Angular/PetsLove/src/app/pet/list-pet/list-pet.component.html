@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4"><button class="btn btn-primary" [routerLink]="['/createpet']" style="float: right;">
+                Add Pet
+            </button></div>
+        </div> 
+        <div class="table-responsive">
+            <table class="table" *ngIf="pets.length">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary" (click)="toggleAvatar()">
+                            {{showAvatar?"Hide":"Show"}} Avatar
+                        </button>
+                    </th>
+                    <th>Pet Name</th>
+                    <th>Pet type</th>
+                    <th>Description</th>
+                    <th>Bill Amount</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pet of pets;let indexOfelement=index;">
+                    <td> <img [src]="pet.icon" *ngIf="showAvatar"></td>
+                    <td>{{pet.petname}}</td>
+                    <td>{{pet.pettype}}</td>
+                    <td>{{pet.description}}</td>
+                    <td>{{pet.amount}}</td>
+                    <td><button class="btn btn-primary" [routerLink]="['/editpet',indexOfelement]" >
+                        Edit
+                    </button>
+                </td>
+                    <td><button class="btn btn-primary" (click)="toggleDelete(indexOfelement)">
+                        Delete
+                    </button>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

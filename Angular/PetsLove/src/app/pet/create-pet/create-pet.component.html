@@ -1,0 +1,29 @@
+<br><br>
+<div class="container">
+    <h2>Add Pets</h2>
+    <form name="formdata">
+        <div class="form-group">
+            <label for="petname">Pet Name:</label>
+            <input type="text" class="form-control" [(ngModel)]="pet.petname" name="petname">
+        </div>
+        <div class="form-group">
+            <label for="pettype">Pet type:</label>
+            <input type="text" class="form-control" [(ngModel)]="pet.pettype" name="pettype">
+        </div>
+        <div class="form-group">
+            <label for="petavatar">Avatar URL:</label>
+            <input type="text" class="form-control" [(ngModel)]="pet.icon" name="avatarurl">
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" [(ngModel)]="pet.description" name="description">
+        </div>
+        <div class="form-group">
+            <label for="amount">Bill Amount:</label>
+            <input type="text" class="form-control" [(ngModel)]="pet.amount" name="amount">
+        </div>
+        <div class="col-md-4"><button class="btn btn-primary" (click)="addPet()">
+            Add Pet
+        </button></div>
+    </form>
+</div>
