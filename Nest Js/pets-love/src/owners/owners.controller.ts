@@ -1,3 +1,4 @@
+import { UsePipes, ValidationPipe } from '@nestjs/common';
 import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { createOwnerDto } from './createOwner.dto';
 import { OwnersService } from './owners.service';
@@ -14,6 +15,7 @@ export class OwnersController {
     }
 
     @Post()
+    @UsePipes(ValidationPipe)
     createOwner(@Body() request:createOwnerDto){
         return this.owners.createOwner(request);
     }

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { createPetDto } from './createPet.dto';
 import { PetsService } from './pets.service';
 import { updatePetDto } from './updatePet.dto';
@@ -13,6 +13,7 @@ export class PetsController {
     }
 
     @Post()
+    @UsePipes(ValidationPipe)
     createEmployee(@Body() request:createPetDto){
         return this.pets.createPet(request);
     }
