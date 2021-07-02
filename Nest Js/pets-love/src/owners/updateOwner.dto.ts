@@ -1,7 +1,7 @@
 export class updateOwnerDto{
-    public firstname:String;
-    public lastname:String;
-    public icon:String;
-    public contactno:String;
-    public address:String;
+    public firstname:string;
+    public lastname:string;
+    public icon:string;
+    public contactno:string;
+    public address:string;
 }

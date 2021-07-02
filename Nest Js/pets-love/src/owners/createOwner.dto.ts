@@ -1,12 +1,12 @@
 import {IsNotEmpty} from 'class-validator';
 export class createOwnerDto{
     @IsNotEmpty()
-    public firstname:String;
+    public firstname:string;
     @IsNotEmpty()
-    public lastname:String;
-    public icon:String;
+    public lastname:string;
+    public icon:string;
     @IsNotEmpty()
-    public contactno:String;
+    public contactno:string;
     @IsNotEmpty()
-    public address:String;
+    public address:string;
 }
